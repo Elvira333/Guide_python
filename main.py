@@ -1,7 +1,11 @@
-import user_interface as ui
 import html_creater as hc
+import separator as sep
+import find_person as fp
 
-print(hc.create())              # Добавление данных в index.html, также параллельное отображение в файлe c логами log.csv
+fp.search()
+hc.create()
+sep.comma()
+sep.whitespase()
 
 
 

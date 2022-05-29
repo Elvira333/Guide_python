@@ -1,27 +1,26 @@
 path_to_file = 'log.csv'
  
-with open (path_to_file) as file:                            # РІС‹РІРѕРґ С‡РµСЂРµР· СЂР°Р·РґРµР»РёС‚РµР»СЊ РїСЂРѕР±РµР»
-    for num_line, line in enumerate(file):
-        num_line = 1 + num_line
-        with open('separator_whitespace.csv','a') as file:
-            if num_line%4!=0:
-                file.write(line)
-            else:
-                file.write(line)
-                file.write('\n')
+def whitespase(): 
+    with open (path_to_file) as file:                            # метод разделения через пробел
+        for num_line, line in enumerate(file):
+            num_line = 1 + num_line
+            with open('separator_whitespace.csv','a') as file:
+                if num_line % 2 == 0:
+                    file.write(line)
+                elif num_line > 1:
+                    file.write('\n')
 
-with open (path_to_file) as file:                           # РІС‹РІРѕРґ С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ
-    for num_line, line in enumerate(file):
-        num_line = 1 + num_line
-        with open('separator_comma.csv','a') as file:
-            if num_line%4!=0:
-                a = line.replace('\n',', ')
-                file.write(a)
-            else:
-                a = line.strip()
-                file.write(a)
-                file.write('\n')
+def comma():
+    with open (path_to_file) as file:                           # метод разделения через запятую
+        for num_line, line in enumerate(file):
+            num_line = 1 + num_line
+            with open('separator_comma.csv','a') as file:
+                if num_line %2 == 0 and num_line!=2:
+                    a = line.replace('\n',',').replace('|','').replace('         ',' ')
+                    file.write(a)
                 
+
+                    
         
    
                        

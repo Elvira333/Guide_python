@@ -1,19 +1,10 @@
+from this import d
 import data
 import logger as log
 
-def surname_view():
-    d = data.get_surname()
-    log.add_surname(d)
-    return d
-def name_view():
-    d = data.get_name()
-    log.add_name(d)
-    return d
-def number_view():
-    d = data.get_number()
-    log.add_number(d)
-    return d
-def discription_view():
-    d = data.get_description()
-    log.add_description(d)
+def data_view():
+    d0,d1,d2,d3,d4,d5  = data.get_data(),data.get_data(),data.get_data()\
+        ,data.get_data(),data.get_data(),data.get_data()
+    d = d0,d1,d2,d3,d4,d5
+    log.add_data(d)
     return d

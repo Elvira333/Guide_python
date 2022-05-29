@@ -1,21 +1,10 @@
-def add_surname(d):
-    
+from tabulate import tabulate
+
+head = ["Surname", "Name","Phone number","Discription"]
+
+def add_data(d):
     with open ('log.csv', 'a') as file:
-        file.write('Фамилия: {}\n'
-                    .format(d))
-def add_name(d):
+        file.write(tabulate(d,headers=head,tablefmt="grid"))
+        
     
-    with open ('log.csv', 'a') as file:
-        file.write('Имя: {}\n'
-                    .format(d))
-def add_number(d):
-    
-    with open ('log.csv', 'a') as file:
-        file.write('Номер телефона: {}\n'
-                    .format(d))
-def add_description(d):
-    
-    with open ('log.csv', 'a') as file:
-        file.write('Описание: {}\n'
-                    .format(d))
 
